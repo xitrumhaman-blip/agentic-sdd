@@ -1,0 +1,14 @@
+{
+  "name": "agentic-sdd",
+  "owner": {
+    "name": "PhongPx"
+  },
+  "description": "Claude Code plugin for Spec-Driven Development with AI agents and human approval gates",
+  "plugins": [
+    {
+      "name": "engineer",
+      "source": "./plugins/engineer",
+      "description": "Agentic SDD: requirement → plan → architect → build → code review → ship → release, on top of the ./docs architecture knowledge base"
+    }
+  ]
+}

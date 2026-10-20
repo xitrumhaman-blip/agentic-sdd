@@ -1,0 +1,47 @@
+---
+title: Architecture overview
+updated: __DATE__
+covers:
+  - "**"          # TODO: narrow to the real top-level source paths
+status: provisional   # change to "current" once verified against the code
+---
+
+# Architecture overview
+
+High-level structure of __PROJECT_NAME__. Keep this accurate; it is the first
+thing an agent reads to orient itself.
+
+## Layers / modules
+TODO: describe the main parts and their responsibilities.
+
+## Data flow
+TODO: how a typical request / job moves through the system.
+
+## Diagrams (C4 model)
+
+### Level 1 — System context
+Who uses __PROJECT_NAME__ and which external systems it talks to.
+
+```mermaid
+flowchart LR
+  user([User]) --> sys["__PROJECT_NAME__"]
+  sys --> ext[External system]
+```
+
+### Level 2 — Containers
+The deployable/runnable parts (apps, services, databases, queues) and how they
+communicate.
+
+```mermaid
+flowchart LR
+  user([User]) --> web[Web app]
+  web -->|HTTPS/JSON| api[API]
+  api --> db[(Database)]
+```
+
+TODO: replace both diagrams with the real shape of the system. Component-level
+(C4 level 3) detail belongs in `components/`.
+
+## Component docs
+Each significant module gets its own file under `components/`. See
+`components/` for details once added.

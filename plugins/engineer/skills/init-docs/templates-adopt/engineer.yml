@@ -1,0 +1,17 @@
+# Agentic SDD — where this repo keeps its docs (written by /engineer:init-docs
+# in adopt mode). Paths are relative to the repo root. List only what differs
+# from the default layout; see "Docs layout" in the plugin's
+# references/sdd-conventions.md for every key and its default.
+paths:
+  # architecture: docs/architecture/overview.md
+  # invariants: docs/architecture/invariants.md
+  # decisions: docs/adr
+  # adr_template: docs/adr/template.md
+  # testing: docs/conventions/testing.md
+# How invariants are cited in this repo: INV-{nnn} (default) → INV-007,
+# "#{n}" → #7, "R{n}" → R7. Existing files are never renumbered.
+invariant_id: "INV-{nnn}"
+# Paths whose changes do not invalidate a green test report (docs, CHANGELOG.md
+# and .claude/ are always ignored). "dir/" covers everything below it.
+# test_report_ignore:
+#   - tools/dev/

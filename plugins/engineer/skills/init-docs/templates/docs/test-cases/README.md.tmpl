@@ -1,0 +1,25 @@
+---
+title: Test cases
+updated: __DATE__
+---
+
+# Test cases
+
+## feature-tests/
+The living specification of __PROJECT_NAME__: one Markdown file per behaviour,
+grouped by domain — `feature-tests/<domain>/FT-vX.Y.Z.T-NN-<slug>.md`, written
+in Gherkin (Given / When / Then). The ID embeds the version that introduced the
+test and never changes; later versions append themselves to `updated_in`.
+
+- `automation: automated` — implemented in the project's e2e/integration
+  framework; the test name contains the FT ID; `automated_by` points to it.
+- `automation: manual` — executed by an agent or during UAT; evidence goes to
+  `docs/plans/vX/test-report.md`.
+- `status: deprecated` — behaviour removed; kept for history.
+
+## unit-tests/
+Unit test **code** lives next to the source, per the stack's convention.
+`unit-tests/vX.Y.Z.T.md` maps each WBS goal of a version to the unit tests that
+cover it.
+
+Commands to run everything: `commands:` in `docs/04-conventions/testing.md`.

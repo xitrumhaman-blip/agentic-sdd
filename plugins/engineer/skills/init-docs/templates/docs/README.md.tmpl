@@ -1,0 +1,60 @@
+---
+scaffold: engineer/init-docs
+scaffold_version: __SCAFFOLD_VERSION__
+generated: __DATE__
+---
+
+# __PROJECT_NAME__ docs
+
+__ONE_LINER__
+
+This is the knowledge base agents and humans read **before implementing**, so new
+work follows the existing architecture, constraints, and decisions. Read
+selectively: open what the task needs, not everything.
+
+Work is delivered per version with the Agentic SDD process
+(`/engineer:requirement` → `plan` → `architect` → `build` → `release`); see
+`04-conventions/git-workflow.md` and `/engineer:guide`.
+
+## Reading order
+
+1. `00-context/` — what the product is and the shared vocabulary.
+2. `02-constraints/invariants.md` — the rules you must never break. Always check.
+3. `03-decisions/` — decisions already made and why. Find the ones tagged for
+   your area before proposing anything.
+4. The architecture + conventions files relevant to your task (map below).
+
+## When to read what
+
+| If your task touches…            | Read…                                                        |
+|----------------------------------|--------------------------------------------------------------|
+| Anything, always                 | `02-constraints/invariants.md`                               |
+| Overall structure / a new module | `01-architecture/overview.md`, then the relevant `components/`|
+| Data, schema, migrations         | `01-architecture/data-model.md`                              |
+| An external API or endpoint      | `04-conventions/api-design.md`                               |
+| Adding/updating a dependency     | `02-constraints/dependencies.md`                             |
+| Performance / security / limits  | `02-constraints/non-functional.md`                           |
+| Tests                            | `04-conventions/testing.md`                                  |
+| Code layout / naming / patterns  | `04-conventions/coding-style.md`                             |
+| Branches / commits / PRs         | `04-conventions/git-workflow.md`                             |
+| Current behaviour of a feature   | `test-cases/feature-tests/<domain>/` (living spec, Gherkin)  |
+| The version you are working on   | `plans/vX.Y.Z.T/` — requirement, plan, architecture          |
+
+## Status markers
+
+- An ADR is binding only when `status: Accepted`. `Proposed` means under
+  discussion — do not treat it as a rule yet.
+- A feature test describes current behaviour only while `status: active`.
+- A version's plan files are binding only for that version; check the
+  `status:` in its `requirement.md`.
+- `TODO: confirm` marks content that was scaffolded but not yet verified.
+
+## Conventions for these docs
+
+- Markdown + YAML frontmatter + Mermaid only, so everything is greppable.
+- Reference things by ID: invariants `INV-00x`, decisions `ADR-000x`,
+  requirements `REQ-NN` / goals `G-NN` (per version), feature tests
+  `FT-vX.Y.Z.T-NN`.
+- Architecture/description docs follow the code. Constraints and ADRs lead the
+  code — if code conflicts with them, fix the code or change the decision
+  deliberately, don't rewrite the rule to match the code.

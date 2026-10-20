@@ -1,0 +1,44 @@
+# __PROJECT_NAME__
+
+__ONE_LINER__
+
+Stack: __STACK__
+
+## Before you implement anything
+
+This project keeps its architecture, constraints, and past technical decisions
+in `./docs`. **Read `docs/README.md` first** — it is the map and tells you which
+files to open for the task at hand. Do not reinvent decisions that already exist.
+
+Hard rules that must never be broken live in `docs/02-constraints/invariants.md`.
+Decisions already made (with their rationale) live in `docs/03-decisions/`.
+
+If an implementation would force you to violate an invariant or reverse an
+accepted ADR: stop and raise it with the user, or propose a new ADR. Do not
+quietly work around it.
+
+## How work is delivered
+
+Agentic SDD, via the `engineer` plugin: `/engineer:requirement` → `/engineer:plan`
+→ `/engineer:architect` → `/engineer:build` → `/engineer:release stag|prod`.
+`/engineer:status` shows where each version stands. Branches: `main` = STAG,
+`release` = PROD, `build/vX.Y.Z.T` per version. Commits follow Conventional
+Commits (mandatory).
+
+## Commands
+
+Test commands are defined in `docs/04-conventions/testing.md` (`commands:`).
+- Install: `__CMD_SETUP__`
+- Build:   `TODO`
+- Test:    `__CMD_UNIT__`
+- Lint:    `__CMD_LINT__`
+
+## Key pointers
+
+- Architecture overview: `docs/01-architecture/overview.md`
+- Invariants (never break): `docs/02-constraints/invariants.md`
+- Decisions (ADRs): `docs/03-decisions/`
+- Conventions: `docs/04-conventions/`
+- How agents should work here: `docs/06-agent-guide/workflow.md`
+- Versions in flight: `docs/plans/`
+- Current behaviour (living spec): `docs/test-cases/feature-tests/`

@@ -1,0 +1,47 @@
+---
+title: Git workflow
+updated: __DATE__
+---
+
+# Git workflow
+
+__PROJECT_NAME__ follows **Agentic SDD**. The `engineer` plugin skills create
+the branches, PRs and tags below; do not create them by hand unless a skill
+asks you to.
+
+## Branches
+
+| Branch | Role |
+|--------|------|
+| `main` | STAG environment |
+| `release` | PROD environment |
+| `build/vX.Y.Z.T` | Integration branch of one version, created from `release` |
+| `port/vX.Y.Z.T` | Cherry-pick of the build branch onto `main` |
+
+Promotion: PR `port/vX → main` → tag `vX-rc.N` → UAT on STAG → PR
+`build/vX → release` → tag `vX`. Pull requests are merged with a **merge
+commit**, never squash.
+
+## Versions and tags
+`X.Y.Z.T` — X breaking, Y feature, Z improvement, T fix. PROD tags `vX.Y.Z.T`
+on `release`; STAG tags `vX.Y.Z.T-rc.N` on `main`. The version lives only in
+tags, branch names and `docs/plans/`; not in package manifests.
+
+## Commits — Conventional Commits (mandatory)
+`<type>(<scope>)!: <description>` with type in `feat fix perf refactor improve
+docs test build ci chore style revert`. `feat` → feature, `fix` → fix,
+`perf`/`refactor`/`improve` → improvement, `!` or `BREAKING CHANGE:` → major.
+Commits for a WBS goal carry the trailer `Refs: vX.Y.Z.T/G-NN` — a real git
+trailer: in the last paragraph, in one block with `Co-Authored-By:` and any
+other trailer, no blank line between them. If the repo uses commitlint, its
+`type-enum` must allow `improve`.
+
+## Pull requests
+Title `<type>: <summary> (vX.Y.Z.T)`. TODO: required reviewers and checks.
+
+## PR checklist
+- [ ] Code follows `04-conventions/`
+- [ ] No invariant in `02-constraints/invariants.md` is violated
+- [ ] If an architectural decision was made, an ADR exists in `03-decisions/`
+- [ ] Docs updated if architecture/behavior changed
+- [ ] Feature tests and unit tests green (`docs/plans/vX/test-report.md`)

@@ -1,0 +1,33 @@
+---
+id: ADR-0001
+title: Record architecture decisions
+status: Accepted
+date: __DATE__
+tags: [process]
+supersedes: []
+---
+
+## Context
+__PROJECT_NAME__ is built partly by coding agents. For new work to stay
+consistent with earlier choices, those choices and their rationale must be
+written down where an agent will read them before implementing.
+
+## Decision
+We record significant architecture and technical decisions as ADRs in
+`docs/03-decisions/`, one file per decision, using `_template.md`. ADRs are
+immutable once `Accepted`: to change course we add a new ADR and mark the old one
+`Superseded by ADR-XXXX` rather than editing its content. Numbering is sequential
+(`0001`, `0002`, …).
+
+## Alternatives considered
+- **No written decisions** — rejected: agents re-litigate settled choices and
+  drift from the architecture.
+- **Decisions only in commit messages / PRs** — rejected: not discoverable at
+  implementation time and easily lost.
+
+## Consequences
+- A decision that affects architecture (new dependency, new pattern, new service,
+  changed boundary) SHOULD have an ADR, ideally written at planning time as
+  `Proposed` and promoted to `Accepted` before implementation.
+- Agents MUST check `03-decisions/` for relevant ADRs (by tag) before proposing a
+  design, and MUST NOT silently reverse an `Accepted` ADR.

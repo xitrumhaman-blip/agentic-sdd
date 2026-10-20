@@ -1,0 +1,22 @@
+---
+title: Plans
+updated: __DATE__
+---
+
+# Plans
+
+One folder per version, `vX.Y.Z.T/`, created by the Agentic SDD skills on the
+version's `build/vX.Y.Z.T` branch:
+
+| File | Written by | Content |
+|------|------------|---------|
+| `requirement.md` | `/engineer:requirement` | Approved requirement, REQ IDs, EARS acceptance criteria, version bump, lifecycle `status:` |
+| `plan.md` | `/engineer:plan` | Problem statement, before vs after, backward compatibility, WBS goals with Definition of Done and State |
+| `architecture.md` | `/engineer:architect` | What changed in `docs/` for this version and guidance per goal |
+| `test-report.md` | `engineer:run-tests` | Latest full test run |
+
+These files record **changes** per version and are not rewritten afterwards.
+The current behaviour of the product is described by the feature tests in
+`docs/test-cases/feature-tests/`.
+
+Run `/engineer:status` to see every version in flight.

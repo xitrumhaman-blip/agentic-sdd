@@ -1,0 +1,41 @@
+---
+title: Agent workflow
+updated: __DATE__
+---
+
+# How to work in this repo (agents)
+
+Follow this loop for any implementation task in __PROJECT_NAME__.
+
+## Before writing code
+1. Read `docs/README.md` and open only the files it maps to your task.
+2. Read `docs/02-constraints/invariants.md` — always.
+3. Search `docs/03-decisions/` for ADRs tagged for your area. Respect accepted
+   ones.
+4. If you work on a version, read `docs/plans/vX.Y.Z.T/architecture.md` and
+   `plan.md` (your goal's Outcome and Definition of Done), and the feature
+   tests the goal covers.
+
+## If your task involves a new architectural decision
+(new dependency, new pattern, new service, changed boundary)
+- Draft an ADR as `Proposed` using `03-decisions/_template.md` BEFORE implementing.
+- Get it confirmed to `Accepted`, then build to it.
+
+## If implementation would break an invariant or an accepted ADR
+- Stop. Raise it with the user, or propose a superseding ADR.
+- Do NOT quietly work around the rule or rewrite it to match your code.
+
+## While implementing
+- Match `04-conventions/`.
+- Keep changes scoped to the task.
+
+## After finishing
+- Commit with Conventional Commits (`04-conventions/git-workflow.md`).
+- Update affected docs: architecture/component descriptions
+  (`engineer:sync-docs` does this for a version).
+- Run the PR checklist in `04-conventions/git-workflow.md`.
+
+## Direction of truth
+Description docs (architecture, components, data-model) follow the code.
+Constraints and ADRs lead the code. Never edit an invariant just to make a
+failing check pass.

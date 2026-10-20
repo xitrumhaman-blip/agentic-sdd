@@ -1,0 +1,24 @@
+---
+title: Components
+updated: __DATE__
+---
+
+# Components
+
+One file per significant module or service. Give each a `covers:` frontmatter
+listing the source paths it describes, so docs can be matched to code changes.
+
+Example skeleton for a new component file:
+
+```markdown
+---
+title: Billing
+covers:
+  - src/billing/**
+related_adrs: []
+last_synced: TODO-commit-sha
+---
+
+# Billing
+Responsibility, key types, entry points, gotchas.
+```

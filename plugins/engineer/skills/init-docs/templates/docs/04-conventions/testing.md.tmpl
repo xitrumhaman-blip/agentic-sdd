@@ -1,0 +1,41 @@
+---
+title: Testing
+updated: __DATE__
+# Machine-readable: engineer:run-tests runs exactly these. Leave "" if none.
+commands:
+  preflight: ""             # services the tests need, e.g. "docker info >/dev/null"
+  setup: "__CMD_SETUP__"
+  lint: "__CMD_LINT__"
+  unit: "__CMD_UNIT__"
+  feature: "__CMD_FEATURE__"
+---
+
+# Testing
+
+## Expectations
+- New or changed logic has unit tests.
+- Every active feature test in `docs/test-cases/feature-tests/` passes before a
+  version is shipped.
+- TODO: coverage expectation, if any.
+
+## Structure
+- **Unit tests** live next to the source, per the stack's convention.
+  `docs/test-cases/unit-tests/vX.Y.Z.T.md` maps them to WBS goals.
+- **Feature tests** are specified in `docs/test-cases/feature-tests/` (Gherkin).
+  Automated ones are implemented in the e2e/integration framework below, with
+  the FT ID in the test name, e.g. `FT-v1.3.0.0-02 applies a valid coupon`.
+- TODO: where integration/e2e test code lives.
+
+## Tools & patterns
+- Unit framework: TODO
+- Feature (e2e/integration) framework: TODO — choosing or changing it is an
+  architectural decision (ADR).
+- TODO: how to mock, fixtures/factories, test data.
+
+## Environment
+- `preflight` checks the services tests depend on (Docker for Testcontainers,
+  databases, emulators). A test skipped because a service is missing is a
+  problem, not a pass.
+
+## Running tests
+Use the `commands:` above (keep `CLAUDE.md` in sync).

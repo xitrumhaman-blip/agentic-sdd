@@ -1,0 +1,38 @@
+name: Idea / improvement / docs
+description: Suggest an improvement to the plugin, the SDD process or the guide.
+title: "<skill or area>: <idea>"
+labels: ["feedback", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tip: `/engineer:feedback` drafts this for you from the conversation.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [enhancement, documentation]
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Skill or area
+      placeholder: plan / guide / SDD process
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: 0.2.0
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is hard or missing today
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal

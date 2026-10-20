@@ -1,0 +1,51 @@
+name: Plugin bug
+description: An engineer skill, script, template or agent did the wrong thing.
+title: "<skill>: <problem>"
+labels: ["feedback", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tip: run `/engineer:feedback` inside Claude Code — it fills this in from
+        your conversation. Do not paste source code, secrets or customer data.
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill
+      options: [init-docs, requirement, plan, architect, build, run-tests, sync-docs, ship, release, status, guide, feedback, next-version, start-build, other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      description: "`version` in the installed plugin.json"
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: stack
+    attributes:
+      label: Repo stack
+      placeholder: TypeScript / Next.js
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Error output or a paraphrased exchange, trimmed.
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
