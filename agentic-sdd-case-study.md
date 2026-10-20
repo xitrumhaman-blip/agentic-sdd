@@ -1,16 +1,6 @@
-<!--
-DRAFT — not for sharing yet.
-Before this leaves your machine:
-  [ ] Get written permission from the employer to describe this work.
-  [ ] Keep company/product names out (this draft uses [Company] / "the product").
-  [ ] Fill in every [TODO] with numbers you can stand behind; delete any you can't.
-  [ ] Do not attach issue texts, requirement docs or repo links from the private repo.
--->
-
 # Case study: an AI-agent workflow for Spec-Driven Development
 
 **Role:** designer and maintainer (process design, decisions, review, release) ·
-**When:** Oct 2026, 16 days · **Where:** [Company], internal tooling ·
 **Tools:** Claude Code (skills, subagents, plugins), Bash, Git, GitHub CLI
 
 > I designed and ran a Claude Code plugin that lets AI agents take a product
@@ -23,11 +13,9 @@ Before this leaves your machine:
 | | |
 |---|---|
 | Delivered | 1 plugin: 15 skills, 3 subagents, 13 Bash scripts (~1,150 lines), shared conventions, onboarding guide |
-| Pace | 48 commits, 8 versions (0.1 → 0.7) in 16 days |
 | Feedback loop | 20 GitHub issues + 11 queued reports from real use, all resolved; each issue closed within 2 days of being filed |
 | Quality | Every change round was checked by an independent review agent before release. Each round found real problems (5–16 per round), and all were fixed |
 | Measured effect | Mid-build pauses for decisions: ~6 per version → 1 in the next version, after moving design decisions upfront (details below) |
-| Adoption | [TODO: number of repos / people using it, how long, anything else you can measure] |
 
 ## 1. The problem
 

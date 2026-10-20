@@ -1,16 +1,8 @@
-<!--
-BẢN NHÁP — chưa chia sẻ.
-Trước khi gửi tài liệu này ra ngoài:
-  [ ] Xin phép công ty bằng văn bản để được mô tả công việc này.
-  [ ] Không ghi tên công ty/sản phẩm (bản nháp này dùng [Company] / "sản phẩm").
-  [ ] Điền mọi chỗ [TODO] bằng số liệu bạn có thể chứng minh; xoá những chỗ không làm được.
-  [ ] Không đính kèm nội dung issue, tài liệu requirement hay link tới repo nội bộ.
--->
+
 
 # Case study: quy trình làm việc với AI agent cho Spec-Driven Development
 
 **Vai trò:** người thiết kế và duy trì (thiết kế quy trình, ra quyết định, review, release) ·
-**Thời gian:** tháng 10/2026, 16 ngày · **Nơi làm:** [Company], công cụ nội bộ ·
 **Công cụ:** Claude Code (skills, subagents, plugins), Bash, Git, GitHub CLI
 
 > Tôi đã thiết kế và vận hành một plugin Claude Code cho phép AI agent đưa một
@@ -23,11 +15,9 @@ Trước khi gửi tài liệu này ra ngoài:
 | | |
 |---|---|
 | Kết quả bàn giao | 1 plugin: 15 skill, 3 subagent, 13 script Bash (~1.150 dòng), bộ quy ước dùng chung, hướng dẫn onboarding |
-| Tốc độ | 48 commit, 8 phiên bản (0.1 → 0.7) trong 16 ngày |
 | Vòng phản hồi | 20 GitHub issue + 11 báo cáo xếp hàng từ việc dùng thật, tất cả đã được xử lý; mỗi issue được đóng trong vòng 2 ngày kể từ khi tạo |
 | Chất lượng | Mỗi đợt thay đổi đều được một review agent độc lập kiểm tra trước khi release. Đợt nào cũng phát hiện vấn đề thật (5–16 vấn đề mỗi đợt), và tất cả đều đã được sửa |
 | Hiệu quả đo được | Số lần dừng giữa chừng lúc build để chờ quyết định: ~6 lần mỗi phiên bản → 1 lần ở phiên bản kế tiếp, sau khi đưa các quyết định thiết kế lên làm trước (chi tiết bên dưới) |
-| Mức độ áp dụng | [TODO: số repo / số người đang dùng, dùng trong bao lâu, và bất cứ điều gì khác đo được] |
 
 ## 1. Vấn đề
 
